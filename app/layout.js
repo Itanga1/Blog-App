@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <nav className=" shadow-md flex justify-between p-4 mt-2 mb-5 mx-2 rounded-2xl">
+        <nav className=" bg-white shadow-md flex justify-between p-4 mt-2 mb-5 mx-2 rounded-2xl sticky top-0">
           <h1 className="grow text-xl font-bold font-serif text-blue-500">Blog App</h1>
           <div className="flex justify-evenly grow text-blue-500">
             <Link className="text-lg font-bold" href={'/'}>Posts</Link> 
@@ -20,6 +20,11 @@ export default function RootLayout({ children }) {
           </div>
         </nav>
         <main>{children}</main>
+        <footer>
+          <div className="bg-gray-100 text-center p-4 mt-5 mx-2 rounded-2xl">
+            <p className="text-blue-500 font-bold">© 2023 Blog App. All rights reserved.</p>
+          </div>
+        </footer>
       </body>
     </html>
   );
