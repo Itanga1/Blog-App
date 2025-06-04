@@ -1,5 +1,4 @@
 import Link from "next/link";
-import createConnection from "@/lib/db";
 import Axios from "axios";
 
 
@@ -19,9 +18,9 @@ export default async function Home() {
         {
           posts.map((post)=>{
             return(
-              <div className="flex flex-col p-2 bg-blue-100 rounded-lg shadow-md gap-2 max-w-5/7" key={post.id}>
+              <div className="flex flex-col p-2 bg-blue-100 rounded-lg shadow-md gap-2 w-5/7" key={post.id}>
                 <h2 className="text-2xl font-semibold">{post.title}</h2>
-                <p>{post.description}</p>
+                <p>{post.description.slice(0,150)} {post.description.length>150?'....':''}</p>
                 <Link href={'/blog'} className="self-end pr-2 text-blue-500 underline">View more</Link>
               </div>
             )
