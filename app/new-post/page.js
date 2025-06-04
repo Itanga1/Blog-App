@@ -27,7 +27,7 @@ export default function NewBlog(){
   }
 
   return(
-    <div className=" flex flex-col items-center justify-center gap-3 h-[calc(100vh-90px)]">
+    <div className=" flex flex-col items-center justify-center gap-3 h-[calc(100vh-170px)]">
       <h1 className="text-3xl font-bold text-center">Add New Post</h1>
       <form className=" flex flex-col shadow-lg p-10 mt-2 justify-evenly min-h-[400px] w-[600px]" onSubmit={createPost}>
         <label>Post title: </label>
