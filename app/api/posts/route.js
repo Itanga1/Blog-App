@@ -1,13 +1,18 @@
-import createConnection from "@/lib/db";
+import connection from "@/lib/db";
 import { NextResponse } from "next/server";
-export default function GET(){
-  const db = createConnection();
-  db.query("SELECT * FROM blogs",(err,result)=>{
-    if(err){
-      console.error("Error fetching posts:", err);
-      return NextResponse.json({error: "Error fetching posts"}, {status: 500});
-    }else{
-      return NextResponse.json(result, {status: 200});
-    }
-  })
+
+export async function GET() {;
+  try {
+    const sql = "SELECT * FROM blogs";
+    const [posts] = await connection.query(sql);
+    
+    return NextResponse.json(posts, { status: 200 });
+    
+  } catch (err) {
+    console.error("Error fetching posts:", err);
+    return NextResponse.json( 
+      { error: "Error fetching posts", details: err.message },
+      { status: 500 }
+    );
+  }
 }
