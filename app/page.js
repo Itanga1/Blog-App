@@ -21,7 +21,7 @@ export default async function Home() {
               <div className="flex flex-col p-2 bg-blue-100 rounded-lg shadow-md gap-2 w-5/7" key={post.id}>
                 <h2 className="text-2xl font-semibold">{post.title}</h2>
                 <p>{post.description.slice(0,150)} {post.description.length>150?'....':''}</p>
-                <Link href={'/blog'} className="self-end pr-2 text-blue-500 underline">View more</Link>
+                <Link href={`/post/${post.id}`} className="self-end pr-2 text-blue-500 underline">Read more</Link>
               </div>
             )
           })
