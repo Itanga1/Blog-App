@@ -1,6 +1,8 @@
 "use server";
 import { redirect } from "next/navigation";
 import { DeleteButton } from "./deleteButton";
+import Link from "next/link";
+import { FaArrowLeft } from "react-icons/fa6";
 
 export default async function viewPost({ params }) {
   const { id } = await params;
@@ -12,6 +14,7 @@ export default async function viewPost({ params }) {
   
   return (
     <div className="flex flex-col items-center justify-center mt-5 gap-3 min-h-[calc(50vh-90px)]">
+      <Link href={'/'} className=" flex items-center justify-center text-blue-500 font-bold text-lg gap-2 underline self-start ml-5"><FaArrowLeft /> Back to Posts</Link>
       <h1 className="text-3xl font-bold text-center">Post Details</h1>
       <div className="flex flex-col bg-blue-100 rounded-lg shadow-md gap-2 w-5/7 p-5">
         <h2 className="text-2xl font-semibold">{post.title}</h2>
