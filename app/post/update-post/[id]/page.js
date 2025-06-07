@@ -4,7 +4,7 @@ import Axios from "axios";
 import { useParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 
-export default function updatePost(){
+export default function UpdatePost(){
   const router = useRouter();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
