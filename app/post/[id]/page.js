@@ -21,7 +21,7 @@ export default async function viewPost({ params }) {
         <p>{post.description}</p>
         <div className=' flex flex-row justify-end gap-2 mt-2'>
           <DeleteButton id={id} />
-          <button className=' py-[10px] px-[20] font-bold text-md text-white rounded-2xl bg-blue-500'>Update</button>
+          <Link href={`/post/update-post/${id}`} className=' py-[10px] px-[20] font-bold text-md text-white rounded-2xl bg-blue-500'>Update</Link>
         </div>
       </div>
     </div>
