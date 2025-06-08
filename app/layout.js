@@ -16,7 +16,6 @@ export default function RootLayout({ children }) {
           <div className="flex justify-evenly grow text-blue-500">
             <Link className="text-lg font-bold" href={'/'}>Posts</Link> 
             <Link className="text-lg font-bold" href={'/new-post'}>New Post</Link>
-            <Link className="text-lg font-bold" href={'/about'}>About</Link>
           </div>
         </nav>
         <main>{children}</main>
